@@ -915,6 +915,53 @@
             .stat{font-size:.6rem;letter-spacing:.1em;}
         }
 
+
+        /* ── MOBILE LANDSCAPE + VIDEO VISIBILITY FIX ─────────── */
+        @media(max-width:900px){
+            .site-bg-video{z-index:0;background:#030303;}
+            .site-bg-video video{
+                width:100vw;
+                height:100svh;
+                min-width:100%;
+                min-height:100%;
+                object-fit:cover;
+                object-position:center center;
+                opacity:.82;
+                filter:brightness(.72) contrast(1.08) saturate(1.02);
+            }
+            .site-bg-video::before{
+                background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.42)),
+                           linear-gradient(90deg,rgba(0,0,0,.38),rgba(0,0,0,.08),rgba(0,0,0,.38));
+            }
+        }
+
+        @media(max-width:900px) and (orientation:landscape){
+            .hero{min-height:100svh;padding:18px 0 22px;place-items:center;}
+            .hero-shell{width:min(100% - 28px,980px);}
+            .hero-content{
+                display:grid;
+                grid-template-columns:1.05fr .95fr;
+                grid-template-areas:"eyebrow eyebrow" "name text" "name actions" "stats stats";
+                align-items:center;column-gap:24px;row-gap:8px;text-align:left;
+                padding:22px 28px;border-radius:28px;
+            }
+            .eyebrow{grid-area:eyebrow;justify-content:flex-start;margin-bottom:4px;font-size:.52rem;}
+            h1{grid-area:name;font-size:clamp(3rem,13vw,6rem);line-height:.9;letter-spacing:.055em;}
+            .role,.tagline,.hero-bio,.luxury-line{grid-column:2;text-align:left;}
+            .role{font-size:clamp(1.25rem,4.4vw,2rem);margin-top:0;}
+            .tagline{font-size:.58rem;line-height:1.4;margin-top:4px;}
+            .hero-bio{font-size:.78rem;line-height:1.45;margin:8px 0 0;max-width:42ch;}
+            .luxury-line{font-size:.52rem;line-height:1.4;margin-top:8px;}
+            .cta-row{grid-area:actions;display:grid;grid-template-columns:1fr 1fr;width:100%;gap:10px;margin-top:10px;}
+            .btn{min-width:0;min-height:48px;padding:0 14px;font-size:.56rem;letter-spacing:.11em;}
+            .mini-stats{grid-area:stats;grid-template-columns:repeat(3,1fr);width:100%;gap:10px;margin-top:12px;}
+            .stat{min-height:44px;padding:8px 10px;font-size:.54rem;letter-spacing:.1em;}
+            .main-nav{display:none;}
+        }
+
+        @media(max-width:640px) and (orientation:portrait){
+            .site-bg-video video{opacity:.78;object-position:center center;}
+        }
     </style>
 </head>
 
@@ -927,7 +974,7 @@
     <div class="particles" id="particles" aria-hidden="true"></div>
 
     <div class="site-bg-video" aria-hidden="true">
-        <video autoplay muted loop playsinline webkit-playsinline preload="auto">
+        <video autoplay muted loop playsinline webkit-playsinline preload="auto" src="https://res.cloudinary.com/dllgscxar/video/upload/v1777199956/WhatsApp_Video_2026-04-26_at_1.38.44_PM_x15bak.mp4">
             <source src="https://res.cloudinary.com/dllgscxar/video/upload/v1777199956/WhatsApp_Video_2026-04-26_at_1.38.44_PM_x15bak.mp4" type="video/mp4">
         </video>
     </div>
