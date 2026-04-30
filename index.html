@@ -815,6 +815,106 @@
             *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
             .js .reveal{opacity:1;transform:none;filter:none;}
         }
+
+
+        /* ── MOBILE FIX 2026-04-30 ─────────────────────
+           Keeps hero inside small phone screens and prevents side overflow. */
+        @media(max-width:640px){
+            body{
+                overflow-x:hidden;
+            }
+            .hero{
+                min-height:auto;
+                padding:28px 0 36px;
+                place-items:start center;
+            }
+            .hero-shell{
+                width:calc(100% - 22px);
+            }
+            .hero-content{
+                width:100%;
+                padding:24px 16px 22px;
+                border-radius:28px;
+                backdrop-filter:blur(8px);
+            }
+            .eyebrow{
+                font-size:.54rem;
+                letter-spacing:.24em;
+                margin-bottom:14px;
+                white-space:nowrap;
+            }
+            h1{
+                font-size:clamp(3.05rem,18vw,5.05rem);
+                letter-spacing:.045em;
+                line-height:.92;
+            }
+            .role{
+                font-size:clamp(1.55rem,7.5vw,2.15rem);
+                margin-top:18px;
+            }
+            .tagline{
+                font-size:.62rem;
+                letter-spacing:.18em;
+                line-height:1.55;
+                margin-top:18px;
+            }
+            .hero-bio{
+                font-size:.94rem;
+                line-height:1.62;
+                margin-top:22px;
+                max-width:30ch;
+            }
+            .luxury-line{
+                font-size:.57rem;
+                letter-spacing:.2em;
+                line-height:1.65;
+                margin-top:24px;
+            }
+            .cta-row{
+                width:100%;
+                gap:12px;
+                margin-top:26px;
+            }
+            .btn{
+                width:100%;
+                min-width:0;
+                min-height:64px;
+                padding:0 18px;
+                font-size:.66rem;
+                letter-spacing:.14em;
+            }
+            .mini-stats{
+                width:100%;
+                gap:12px;
+                margin-top:26px;
+            }
+            .stat{
+                min-height:66px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                padding:10px 12px;
+                font-size:.66rem;
+                letter-spacing:.13em;
+                border-radius:999px;
+            }
+            .site-bg-video video{
+                min-width:100%;
+                min-height:100%;
+                object-fit:cover;
+                object-position:center top;
+            }
+        }
+
+        @media(max-width:380px){
+            .hero-shell{width:calc(100% - 18px);}
+            .hero-content{padding:22px 12px 20px;border-radius:24px;}
+            h1{font-size:clamp(2.65rem,17vw,4.2rem);letter-spacing:.035em;}
+            .eyebrow{font-size:.5rem;letter-spacing:.2em;}
+            .btn{font-size:.6rem;letter-spacing:.12em;padding:0 14px;}
+            .stat{font-size:.6rem;letter-spacing:.1em;}
+        }
+
     </style>
 </head>
 
